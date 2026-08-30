@@ -1360,7 +1360,7 @@
               <div class="legend-item"><span class="legend-dot" style="background:#f5c062;"></span> Tropical</div>
               <div class="legend-item"><span class="legend-dot" style="background:#ff4081;"></span> Family</div>
               <div class="legend-item"><span class="legend-dot" style="background:#9d4edd;"></span> Culture</div>
-              <div class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> Alpine</div>
+              <div class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> Friends</div>
               <div class="legend-item"><span class="legend-dot" style="background:#00e676;"></span> Nature</div>
             </div>
 
@@ -1430,7 +1430,7 @@
           <div class="filter-pill" data-cat="family">🎈 Family</div>
           <div class="filter-pill" data-cat="culture">🏛️ Culture</div>
           <div class="filter-pill" data-cat="island">🏝️ Tropical</div>
-          <div class="filter-pill" data-cat="expedition">🏔️ Alpine</div>
+          <div class="filter-pill" data-cat="friends">🏔️ Friends</div>
           <div class="filter-pill" data-cat="nature">🐼 Nature</div>
         </div>
       </div>
@@ -1679,8 +1679,8 @@
     "uploadDateStr": "Mar 12, 2025",
     "year": 2025,
     "timestamp": 1741737600,
-    "category": "expedition",
-    "categoryLabel": "\ud83c\udfd4\ufe0f Alpine",
+    "category": "friends",
+    "categoryLabel": "\ud83c\udfd4\ufe0f Friends",
     "location": "Swiss Alps (Interlaken, Lucerne, Zurich)",
     "country": "Switzerland",
     "lat": 46.6863,
@@ -1729,7 +1729,7 @@
     "uploadDateStr": "Aug 12, 2025",
     "year": 2025,
     "timestamp": 1754956800,
-    "category": "culture",
+    "category": "friends",
     "categoryLabel": "\ud83c\udfdb\ufe0f Cultural",
     "location": "Krakow, Wieliczka & Warsaw, Poland",
     "country": "Poland",
@@ -1741,7 +1741,7 @@
     "tags": [
       "#poland",
       "#krakow",
-      "#wieliczka",
+      "#tarnow",
       "#castles"
     ],
     "description": "Wawel Castle, subterranean salt cathedral of Wieliczka, and Krakow old town."
@@ -1749,14 +1749,14 @@
   {
     "id": "N3amZIGjz0U",
     "title": "Summer2025",
-    "displayTitle": "Summer2025 (Albania & Riviera)",
-    "uploadDate": "2025-08-23",
-    "uploadDateStr": "Aug 23, 2025",
-    "year": 2025,
+    "displayTitle": "Watermelon, No Watermelon",
+    "uploadDate": "2026-08-28",
+    "uploadDateStr": "Aug 28, 2026",
+    "year": 2026,
     "timestamp": 1755907200,
-    "category": "island",
+    "category": "friends",
     "categoryLabel": "\ud83c\udfdd\ufe0f Albanian Riviera",
-    "location": "Albanian Riviera (Tirana, Sarand\u00eb & Ksamil, Albania)",
+    "location": "Albanian Riviera (Tirana & Himare, Albania)",
     "country": "Albania",
     "lat": 41.1533,
     "lng": 20.1683,
@@ -1766,9 +1766,7 @@
     "tags": [
       "#albania",
       "#summer2025",
-      "#albanianriviera",
-      "#ksamil",
-      "#sarande"
+      "#albanianriviera"
     ],
     "description": "Summer 2025 family adventure across the crystal waters of the Albanian Riviera, Ksamil beaches, and castles in Albania."
   },
@@ -1875,7 +1873,7 @@
   {
     "id": "uFDugWOLx4c",
     "title": "WatermelonNoWatermelon2026",
-    "displayTitle": "WatermelonNoWatermelon2026",
+    "displayTitle": "Watermelon,NoWatermelon2026",
     "uploadDate": "2026-08-23",
     "uploadDateStr": "Aug 23, 2026",
     "year": 2026,
@@ -1883,7 +1881,7 @@
     "category": "family",
     "categoryLabel": "\ud83c\udf49 Family Summer",
     "location": "Summer Oasis Retreat",
-    "country": "Belgium",
+    "country": "Albania",
     "lat": 50.8503,
     "lng": 4.3517,
     "distance": 80,
@@ -2656,7 +2654,7 @@
         card.id = `card-${vid.id}`;
 
         card.innerHTML = `
-          <div class="card-thumb-container">
+          <div class="card-thumb-container" onclick="openVideoPlayer('${vid.id}'); event.stopPropagation();" title="Click to play video">
             <img class="card-thumb-image" src="${vid.thumb}" alt="${vid.displayTitle}" />
             <div class="card-play-overlay">▶</div>
             <div class="card-badge-overlay-top">
