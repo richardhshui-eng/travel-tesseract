@@ -29,11 +29,11 @@
       --border-subtle: rgba(255, 255, 255, 0.09);
       
       --cyan-glow: #00f0ff;
-      --gold-accent: #f5c062;
-      --purple-accent: #9d4edd;
-      --pink-accent: #ff4081;
+      --gold-accent: #ffd600;
+      --purple-accent: #b388ff;
+      --pink-accent: #ff2d75;
       --emerald-accent: #00e676;
-      --sky-accent: #38bdf8;
+      --sky-accent: #00e5ff;
       
       --text-main: #f0f4fc;
       --text-muted: #8e9bb4;
@@ -74,9 +74,9 @@
       z-index: 0;
       pointer-events: none;
       background: 
-        radial-gradient(circle at 15% 20%, rgba(157, 78, 221, 0.18) 0%, transparent 45%),
-        radial-gradient(circle at 85% 80%, rgba(0, 240, 255, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(245, 192, 98, 0.08) 0%, transparent 55%);
+        radial-gradient(circle at 15% 20%, rgba(179, 136, 255, 0.16) 0%, transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(0, 240, 255, 0.14) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(255, 214, 0, 0.07) 0%, transparent 55%);
     }
 
     .grid-overlay {
@@ -93,7 +93,7 @@
       pointer-events: none;
     }
 
-    /* PASSCODE LOCK SCREEN GATE - STRICTLY LOCKED BY DEFAULT */
+    /* PASSCODE LOCK SCREEN GATE */
     .lock-screen-overlay {
       position: fixed;
       top: 0;
@@ -177,7 +177,7 @@
 
     .passcode-input-box:focus {
       border-color: var(--gold-accent);
-      box-shadow: 0 0 18px rgba(245, 192, 98, 0.45);
+      box-shadow: 0 0 18px rgba(255, 214, 0, 0.45);
     }
 
     .unlock-btn {
@@ -272,7 +272,7 @@
       left: 10px;
       border: 1.5px solid var(--gold-accent);
       border-radius: 3px;
-      box-shadow: 0 0 8px rgba(245, 192, 98, 0.6);
+      box-shadow: 0 0 8px rgba(255, 214, 0, 0.6);
       transform: translateZ(8px);
     }
 
@@ -332,7 +332,7 @@
     }
 
     .mode-tab-btn.active {
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.3), rgba(157, 78, 221, 0.3));
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.3), rgba(179, 136, 255, 0.3));
       border: 1px solid var(--cyan-glow);
       color: #fff;
       box-shadow: 0 0 12px rgba(0, 240, 255, 0.35);
@@ -488,7 +488,7 @@
     .hud-btn.active {
       border-color: var(--gold-accent);
       color: var(--gold-accent);
-      box-shadow: 0 0 10px rgba(245, 192, 98, 0.35);
+      box-shadow: 0 0 10px rgba(255, 214, 0, 0.35);
     }
 
     /* 4D Hypercube Axis Manipulation Panel */
@@ -775,7 +775,7 @@
     .trip-card.selected {
       border-color: var(--gold-accent);
       background: rgba(20, 30, 50, 0.95);
-      box-shadow: 0 0 18px rgba(245, 192, 98, 0.3);
+      box-shadow: 0 0 18px rgba(255, 214, 0, 0.3);
     }
 
     .card-thumb-container {
@@ -788,6 +788,7 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      cursor: pointer;
     }
 
     .card-thumb-image {
@@ -802,28 +803,30 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: rgba(0, 240, 255, 0.3);
+      background: rgba(0, 240, 255, 0.35);
       border: 1.5px solid var(--cyan-glow);
       backdrop-filter: blur(4px);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 1rem;
-      opacity: 0.88;
+      font-size: 1.1rem;
+      opacity: 0.9;
       transition: var(--transition-smooth);
       z-index: 3;
+      cursor: pointer;
     }
 
-    .trip-card:hover .card-play-overlay {
+    .trip-card:hover .card-play-overlay,
+    .card-thumb-container:hover .card-play-overlay {
       transform: translate(-50%, -50%) scale(1.15);
       background: var(--cyan-glow);
       color: #02040b;
       opacity: 1;
-      box-shadow: 0 0 16px var(--cyan-glow);
+      box-shadow: 0 0 18px var(--cyan-glow);
     }
 
     .card-badge-overlay-top {
@@ -853,7 +856,8 @@
     .card-cat-badge {
       font-family: var(--font-mono);
       font-size: 0.65rem;
-      color: #fff;
+      color: #02040b;
+      font-weight: 700;
       padding: 2px 6px;
       border-radius: 4px;
       backdrop-filter: blur(4px);
@@ -903,7 +907,7 @@
 
     .play-video-action-btn {
       width: 100%;
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(157, 78, 221, 0.15));
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(179, 136, 255, 0.15));
       border: 1px solid var(--border-glow);
       border-radius: 6px;
       padding: 6px 10px;
@@ -1084,7 +1088,7 @@
       height: 100vh;
       background: rgba(2, 4, 12, 0.92);
       backdrop-filter: blur(22px);
-      z-index: 100;
+      z-index: 10000;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1162,7 +1166,7 @@
     }
 
     .modal-close-btn:hover {
-      background: rgba(255, 64, 129, 0.25);
+      background: rgba(255, 45, 117, 0.25);
       border-color: var(--pink-accent);
       color: var(--pink-accent);
     }
@@ -1268,7 +1272,7 @@
   <div class="spacetime-bg"></div>
   <div class="grid-overlay"></div>
 
-  <!-- PASSCODE GATE LOCK SCREEN - ALWAYS ACTIVE UNTIL VALIDATED -->
+  <!-- PASSCODE GATE LOCK SCREEN -->
   <div class="lock-screen-overlay" id="lockScreen">
     <div class="lock-card">
       <div class="lock-icon-wrap">
@@ -1354,13 +1358,13 @@
           </div>
 
           <div class="hud-controls-group">
-            <!-- Category Color Legend -->
+            <!-- Category Color Legend with Contrast Hues -->
             <div class="color-legend-hud" id="colorLegendHud">
-              <div class="legend-item"><span class="legend-dot" style="background:#00f0ff;"></span> Cruise</div>
-              <div class="legend-item"><span class="legend-dot" style="background:#f5c062;"></span> Tropical</div>
-              <div class="legend-item"><span class="legend-dot" style="background:#ff4081;"></span> Family</div>
-              <div class="legend-item"><span class="legend-dot" style="background:#9d4edd;"></span> Culture</div>
-              <div class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> Friends</div>
+              <div class="legend-item"><span class="legend-dot" style="background:#ff9100;"></span> Cruise</div>
+              <div class="legend-item"><span class="legend-dot" style="background:#ffd600;"></span> Tropical</div>
+              <div class="legend-item"><span class="legend-dot" style="background:#ff2d75;"></span> Family</div>
+              <div class="legend-item"><span class="legend-dot" style="background:#b388ff;"></span> Culture</div>
+              <div class="legend-item"><span class="legend-dot" style="background:#00e5ff;"></span> Alpine</div>
               <div class="legend-item"><span class="legend-dot" style="background:#00e676;"></span> Nature</div>
             </div>
 
@@ -1430,7 +1434,7 @@
           <div class="filter-pill" data-cat="family">🎈 Family</div>
           <div class="filter-pill" data-cat="culture">🏛️ Culture</div>
           <div class="filter-pill" data-cat="island">🏝️ Tropical</div>
-          <div class="filter-pill" data-cat="friends">🏔️ Friends</div>
+          <div class="filter-pill" data-cat="expedition">🏔️ Alpine</div>
           <div class="filter-pill" data-cat="nature">🐼 Nature</div>
         </div>
       </div>
@@ -1512,8 +1516,10 @@
     // 🔑 CONFIGURE YOUR FAMILY PASSCODES HERE
     // =========================================================================
     const VALID_PASSCODES = [
+      "tesseract2026",
       "tesseract2026!",
-       "hui1985!"
+      "hui1985",
+      "hui1985!"
     ];
 
     // 1. High-Resolution Country Delineation Polygons
@@ -1537,7 +1543,7 @@
     "lng": -69.9683,
     "distance": 4500,
     "thumb": "https://img.youtube.com/vi/JArV8u_3lVk/hqdefault.jpg",
-    "color": "#00f0ff",
+    "color": "#ff9100",
     "tags": [
       "#cruise",
       "#celebrity",
@@ -1562,7 +1568,7 @@
     "lng": -77.8939,
     "distance": 2900,
     "thumb": "https://img.youtube.com/vi/WzVl9Ar0BzE/hqdefault.jpg",
-    "color": "#f5c062",
+    "color": "#ffd600",
     "tags": [
       "#jamaica",
       "#resort",
@@ -1587,7 +1593,7 @@
     "lng": -1.5518,
     "distance": 5800,
     "thumb": "https://img.youtube.com/vi/SebjfWRQLd8/hqdefault.jpg",
-    "color": "#ff4081",
+    "color": "#ff2d75",
     "tags": [
       "#england",
       "#peppapig",
@@ -1612,7 +1618,7 @@
     "lng": -75.6972,
     "distance": 450,
     "thumb": "https://img.youtube.com/vi/yU-4TIebIhk/hqdefault.jpg",
-    "color": "#9d4edd",
+    "color": "#b388ff",
     "tags": [
       "#canada",
       "#ottawa",
@@ -1637,7 +1643,7 @@
     "lng": 4.3517,
     "distance": 6000,
     "thumb": "https://img.youtube.com/vi/nrxqxUDSfjQ/hqdefault.jpg",
-    "color": "#9d4edd",
+    "color": "#b388ff",
     "tags": [
       "#belgium",
       "#brussels",
@@ -1662,7 +1668,7 @@
     "lng": -0.1278,
     "distance": 320,
     "thumb": "https://img.youtube.com/vi/L-3h-P0FnxI/hqdefault.jpg",
-    "color": "#9d4edd",
+    "color": "#b388ff",
     "tags": [
       "#london",
       "#uk",
@@ -1679,15 +1685,15 @@
     "uploadDateStr": "Mar 12, 2025",
     "year": 2025,
     "timestamp": 1741737600,
-    "category": "friends",
-    "categoryLabel": "\ud83c\udfd4\ufe0f Friends",
+    "category": "expedition",
+    "categoryLabel": "\ud83c\udfd4\ufe0f Alpine",
     "location": "Swiss Alps (Interlaken, Lucerne, Zurich)",
     "country": "Switzerland",
     "lat": 46.6863,
     "lng": 7.8632,
     "distance": 650,
     "thumb": "https://img.youtube.com/vi/pMaEjmMVm_4/hqdefault.jpg",
-    "color": "#38bdf8",
+    "color": "#00e5ff",
     "tags": [
       "#switzerland",
       "#alps",
@@ -1712,7 +1718,7 @@
     "lng": 4.4699,
     "distance": 120,
     "thumb": "https://img.youtube.com/vi/Nwd0JdEtF6w/hqdefault.jpg",
-    "color": "#ff4081",
+    "color": "#ff2d75",
     "tags": [
       "#belgium",
       "#familyvisit",
@@ -1729,7 +1735,7 @@
     "uploadDateStr": "Aug 12, 2025",
     "year": 2025,
     "timestamp": 1754956800,
-    "category": "friends",
+    "category": "culture",
     "categoryLabel": "\ud83c\udfdb\ufe0f Cultural",
     "location": "Krakow, Wieliczka & Warsaw, Poland",
     "country": "Poland",
@@ -1737,38 +1743,40 @@
     "lng": 19.945,
     "distance": 1200,
     "thumb": "https://img.youtube.com/vi/VtSlNSO6Up4/hqdefault.jpg",
-    "color": "#9d4edd",
+    "color": "#b388ff",
     "tags": [
       "#poland",
       "#krakow",
-      "#tarnow",
+      "#wieliczka",
       "#castles"
     ],
     "description": "Wawel Castle, subterranean salt cathedral of Wieliczka, and Krakow old town."
   },
   {
-    "id": "N3amZIGjz0U",
-    "title": "Summer2025",
+    "id": "uFDugWOLx4c",
+    "title": "WatermelonNoWatermelon2026",
     "displayTitle": "Watermelon, No Watermelon",
-    "uploadDate": "2026-08-28",
-    "uploadDateStr": "Aug 28, 2026",
-    "year": 2026,
+    "uploadDate": "2025-08-23",
+    "uploadDateStr": "Aug 23, 2025",
+    "year": 2025,
     "timestamp": 1755907200,
-    "category": "friends",
+    "category": "island",
     "categoryLabel": "\ud83c\udfdd\ufe0f Albanian Riviera",
-    "location": "Albanian Riviera (Tirana & Himare, Albania)",
+    "location": "Albanian Riviera (Tirana, Sarand\u00eb & Ksamil, Albania)",
     "country": "Albania",
     "lat": 41.1533,
     "lng": 20.1683,
     "distance": 1700,
-    "thumb": "https://img.youtube.com/vi/N3amZIGjz0U/hqdefault.jpg",
-    "color": "#f5c062",
+    "thumb": "https://img.youtube.com/vi/uFDugWOLx4c/hqdefault.jpg",
+    "color": "#ffd600",
     "tags": [
       "#albania",
-      "#summer2025",
-      "#albanianriviera"
+      "#watermelon",
+      "#albanianriviera",
+      "#summer",
+      "#ksamil"
     ],
-    "description": "Summer 2025 family adventure across the crystal waters of the Albanian Riviera, Ksamil beaches, and castles in Albania."
+    "description": "Summer family adventure across the crystal waters of the Albanian Riviera, Ksamil beaches, and castles in Albania."
   },
   {
     "id": "AsQY0wAtyuY",
@@ -1786,7 +1794,7 @@
     "lng": 1.595,
     "distance": 240,
     "thumb": "https://img.youtube.com/vi/AsQY0wAtyuY/hqdefault.jpg",
-    "color": "#ff4081",
+    "color": "#ff2d75",
     "tags": [
       "#nausicaa",
       "#parcasterix",
@@ -1811,7 +1819,7 @@
     "lng": -79.3832,
     "distance": 6300,
     "thumb": "https://img.youtube.com/vi/-rC7Z7a5tlc/hqdefault.jpg",
-    "color": "#ff4081",
+    "color": "#ff2d75",
     "tags": [
       "#toronto",
       "#christmas",
@@ -1861,7 +1869,7 @@
     "lng": 114.1694,
     "distance": 9300,
     "thumb": "https://img.youtube.com/vi/5c79vmIao-A/hqdefault.jpg",
-    "color": "#f5c062",
+    "color": "#ffd600",
     "tags": [
       "#hongkong",
       "#victoriaharbour",
@@ -1871,29 +1879,28 @@
     "description": "Star Ferry on Victoria Harbour, skyline panorama from Victoria Peak, and dim sum."
   },
   {
-    "id": "uFDugWOLx4c",
-    "title": "WatermelonNoWatermelon2026",
-    "displayTitle": "Watermelon,NoWatermelon2026",
+    "id": "N3amZIGjz0U",
+    "title": "Summer2025",
+    "displayTitle": "Summer2025",
     "uploadDate": "2026-08-23",
     "uploadDateStr": "Aug 23, 2026",
     "year": 2026,
     "timestamp": 1787443200,
     "category": "family",
-    "categoryLabel": "\ud83c\udf49 Family Summer",
+    "categoryLabel": "\u2600\ufe0f Summer Holiday",
     "location": "Summer Oasis Retreat",
-    "country": "Albania",
+    "country": "Belgium",
     "lat": 50.8503,
     "lng": 4.3517,
     "distance": 80,
-    "thumb": "https://img.youtube.com/vi/uFDugWOLx4c/hqdefault.jpg",
-    "color": "#ff4081",
+    "thumb": "https://img.youtube.com/vi/N3amZIGjz0U/hqdefault.jpg",
+    "color": "#ff2d75",
     "tags": [
-      "#summer2026",
-      "#watermelon",
-      "#family",
-      "#laughter"
+      "#summer2025",
+      "#holiday",
+      "#family"
     ],
-    "description": "Summer watermelon games, laughter, and family holiday moments."
+    "description": "Summer family holiday and memories."
   }
 ];
     let VIDEO_VAULT = RAW_VIDEO_VAULT;
@@ -2020,7 +2027,7 @@
       dirLight1.position.set(40, 40, 30);
       scene.add(dirLight1);
 
-      const dirLight2 = new THREE.DirectionalLight(0x9d4edd, 1.0);
+      const dirLight2 = new THREE.DirectionalLight(0xb388ff, 1.0);
       dirLight2.position.set(-40, -30, -30);
       scene.add(dirLight2);
 
@@ -2087,7 +2094,7 @@
       towerGroup.add(baseLandGroup);
 
       const timeAxisGeo = new THREE.CylinderGeometry(0.15, 0.15, 26, 16);
-      const timeAxisMat = new THREE.MeshBasicMaterial({ color: 0xf5c062, transparent: true, opacity: 0.7 });
+      const timeAxisMat = new THREE.MeshBasicMaterial({ color: 0xffd600, transparent: true, opacity: 0.7 });
       const timeAxisMesh = new THREE.Mesh(timeAxisGeo, timeAxisMat);
       timeAxisMesh.position.y = 0;
       towerGroup.add(timeAxisMesh);
@@ -2139,7 +2146,8 @@
         nodeGroup.position.copy(nodePos);
         nodeGroup.userData = { isDynamicTower: true, videoId: vid.id, videoData: vid };
 
-        const sphereGeo = new THREE.SphereGeometry(0.35, 16, 16);
+        // De-clustered Node Sphere (0.22)
+        const sphereGeo = new THREE.SphereGeometry(0.22, 16, 16);
         const sphereMat = new THREE.MeshBasicMaterial({
           color: isVisible ? (isSelected ? 0xffffff : vid.color) : 0x223344,
           transparent: true,
@@ -2149,9 +2157,9 @@
         nodeGroup.add(sphereMesh);
 
         if (isVisible) {
-          const ringGeo = new THREE.RingGeometry(0.48, 0.68, 16);
+          const ringGeo = new THREE.RingGeometry(0.30, 0.44, 16);
           const ringMat = new THREE.MeshBasicMaterial({
-            color: isSelected ? 0xf5c062 : vid.color,
+            color: isSelected ? 0xffd600 : vid.color,
             side: THREE.DoubleSide,
             transparent: true,
             opacity: 0.8
@@ -2270,10 +2278,10 @@
       const axisDefs = [
         { text: "+X: East Longitude", color: "#00f0ff", pos4D: [7.5, 0, 0, 0] },
         { text: "-X: West Longitude", color: "#00f0ff", pos4D: [-7.5, 0, 0, 0] },
-        { text: "+Y: North Latitude", color: "#9d4edd", pos4D: [0, 7.5, 0, 0] },
-        { text: "-Y: South Latitude", color: "#9d4edd", pos4D: [0, -7.5, 0, 0] },
-        { text: "+W: Time Future (2026)", color: "#f5c062", pos4D: [0, 0, 0, 6.5] },
-        { text: "-W: Time Past (2022)", color: "#f5c062", pos4D: [0, 0, 0, -6.5] }
+        { text: "+Y: North Latitude", color: "#b388ff", pos4D: [0, 7.5, 0, 0] },
+        { text: "-Y: South Latitude", color: "#b388ff", pos4D: [0, -7.5, 0, 0] },
+        { text: "+W: Time Future (2026)", color: "#ffd600", pos4D: [0, 0, 0, 6.5] },
+        { text: "-W: Time Past (2022)", color: "#ffd600", pos4D: [0, 0, 0, -6.5] }
       ];
 
       axisDefs.forEach(ax => {
@@ -2299,7 +2307,8 @@
         nodeGroup.position.copy(projPos);
         nodeGroup.userData = { videoId: vid.id, videoData: vid };
 
-        const geo = new THREE.SphereGeometry(0.38, 16, 16);
+        // De-clustered Tesseract Sphere (0.24)
+        const geo = new THREE.SphereGeometry(0.24, 16, 16);
         const mat = new THREE.MeshBasicMaterial({
           color: isVisible ? (isSelected ? 0xffffff : vid.color) : 0x223344,
           transparent: true,
@@ -2309,9 +2318,9 @@
         nodeGroup.add(mesh);
 
         if (isVisible) {
-          const ringGeo = new THREE.RingGeometry(0.5, 0.72, 16);
+          const ringGeo = new THREE.RingGeometry(0.32, 0.46, 16);
           const ringMat = new THREE.MeshBasicMaterial({
-            color: isSelected ? 0xf5c062 : vid.color,
+            color: isSelected ? 0xffd600 : vid.color,
             side: THREE.DoubleSide,
             transparent: true,
             opacity: 0.8
@@ -2333,10 +2342,11 @@
       texCanvas.height = 1024;
       const ctx = texCanvas.getContext("2d");
 
-      ctx.fillStyle = "#071126";
+      // Deep Space Ocean Base
+      ctx.fillStyle = "#040914";
       ctx.fillRect(0, 0, texCanvas.width, texCanvas.height);
 
-      ctx.strokeStyle = "rgba(0, 240, 255, 0.08)";
+      ctx.strokeStyle = "rgba(0, 240, 255, 0.06)";
       ctx.lineWidth = 1;
       for (let x = 0; x <= texCanvas.width; x += 64) {
         ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, texCanvas.height); ctx.stroke();
@@ -2345,9 +2355,10 @@
         ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(texCanvas.width, y); ctx.stroke();
       }
 
-      ctx.fillStyle = "rgba(0, 220, 240, 0.28)";
-      ctx.strokeStyle = "rgba(0, 240, 255, 0.85)";
-      ctx.lineWidth = 1.2;
+      // Sleek Navy/Teal Landmass fill with glowing borders (high contrast with orbs)
+      ctx.fillStyle = "rgba(10, 36, 68, 0.55)";
+      ctx.strokeStyle = "rgba(0, 240, 255, 0.65)";
+      ctx.lineWidth = 1.1;
 
       COUNTRY_POLYGONS.forEach(ring => {
         if (ring.length < 3) return;
@@ -2364,7 +2375,7 @@
 
       const earthTexture = new THREE.CanvasTexture(texCanvas);
       const earthMat = new THREE.MeshStandardMaterial({
-        map: earthTexture, roughness: 0.55, metalness: 0.25, emissive: 0x040e1f, emissiveIntensity: 0.5
+        map: earthTexture, roughness: 0.6, metalness: 0.2, emissive: 0x020813, emissiveIntensity: 0.5
       });
       const earthMesh = new THREE.Mesh(sphereGeo, earthMat);
       globeGroup.add(earthMesh);
@@ -2373,7 +2384,7 @@
         if (ring.length < 3) return;
         const pts = ring.map(pt => latLngToVector3(pt[1], pt[0], radius + 0.02));
         const lineGeo = new THREE.BufferGeometry().setFromPoints(pts);
-        const lineMat = new THREE.LineBasicMaterial({ color: 0x00f0ff, transparent: true, opacity: 0.4 });
+        const lineMat = new THREE.LineBasicMaterial({ color: 0x00f0ff, transparent: true, opacity: 0.35 });
         globeGroup.add(new THREE.Line(lineGeo, lineMat));
       });
 
@@ -2391,14 +2402,15 @@
         const isVisible = (vid.timestamp >= minTimestampFilter && vid.timestamp <= maxTimestampFilter) && (selectedCategory === "all" || vid.category === selectedCategory);
         const isSelected = vid.id === selectedVideoId;
 
-        const pos = latLngToVector3(vid.lat, vid.lng, 10.18);
+        const pos = latLngToVector3(vid.lat, vid.lng, 10.14);
 
         const pinNode = new THREE.Group();
         pinNode.position.copy(pos);
         pinNode.lookAt(new THREE.Vector3(0, 0, 0));
         pinNode.userData = { isGlobePin: true, videoId: vid.id, videoData: vid };
 
-        const geo = new THREE.SphereGeometry(0.15, 16, 16);
+        // De-clustered European/World Globe Pin (0.08)
+        const geo = new THREE.SphereGeometry(0.08, 16, 16);
         const mat = new THREE.MeshBasicMaterial({
           color: isVisible ? (isSelected ? 0xffffff : vid.color) : 0x223344,
           transparent: true,
@@ -2408,12 +2420,12 @@
         pinNode.add(mesh);
 
         if (isVisible) {
-          const ringGeo = new THREE.RingGeometry(0.2, 0.3, 16);
+          const ringGeo = new THREE.RingGeometry(0.11, 0.17, 16);
           const ringMat = new THREE.MeshBasicMaterial({
-            color: isSelected ? 0xf5c062 : vid.color,
+            color: isSelected ? 0xffd600 : vid.color,
             side: THREE.DoubleSide,
             transparent: true,
-            opacity: 0.85
+            opacity: 0.9
           });
           pinNode.add(new THREE.Mesh(ringGeo, ringMat));
         }
@@ -2610,7 +2622,7 @@
     }
 
     // ==========================================
-    // 5. UI VAULT (FULL UNCLIPPED 16:9 THUMBNAILS)
+    // 5. UI VAULT (FULL UNCLIPPED 16:9 THUMBNAILS + CLICKABLE PLAY)
     // ==========================================
     const vaultList = document.getElementById("vaultList");
     const searchInput = document.getElementById("searchInput");
@@ -2654,9 +2666,9 @@
         card.id = `card-${vid.id}`;
 
         card.innerHTML = `
-          <div class="card-thumb-container" onclick="openVideoPlayer('${vid.id}'); event.stopPropagation();" title="Click to play video">
+          <div class="card-thumb-container" onclick="openVideoPlayer('${vid.id}'); event.stopPropagation();" title="Click to Play Video">
             <img class="card-thumb-image" src="${vid.thumb}" alt="${vid.displayTitle}" />
-            <div class="card-play-overlay">▶</div>
+            <div class="card-play-overlay" onclick="openVideoPlayer('${vid.id}'); event.stopPropagation();">▶</div>
             <div class="card-badge-overlay-top">
               <span class="card-date-badge">📅 Upload: ${vid.uploadDate}</span>
               <span class="card-cat-badge" style="background: ${vid.color};">${vid.categoryLabel}</span>
@@ -2702,7 +2714,7 @@
         hudActiveTitle.innerText = `${vid.displayTitle} (${vid.uploadDate})`;
         hudCoords.innerHTML = `LAT ${vid.lat.toFixed(2)}° &bull; LNG ${vid.lng.toFixed(2)}° &bull; DISTANCE ${vid.distance}km &bull; UPLOAD ${vid.uploadDateStr}`;
       } else {
-        hudActiveTitle.innerText = "Spacetime Trajectory (2022\u20132026)";
+        hudActiveTitle.innerText = "Spacetime Trajectory (2022–2026)";
         hudCoords.innerText = `X: Longitude • Y: Time Elevation • Z: Latitude`;
       }
 
@@ -2749,8 +2761,8 @@
       const startStr = new Date(minTimestampFilter * 1000).toISOString().slice(0, 7);
       const endStr = new Date(maxTimestampFilter * 1000).toISOString().slice(0, 7);
 
-      currentUploadDateDisplay.innerText = `${startStr} \u2014 ${endStr}`;
-      document.getElementById("activeTimeEpochRange").innerText = `${startStr} \u2192 ${endStr}`;
+      currentUploadDateDisplay.innerText = `${startStr} — ${endStr}`;
+      document.getElementById("activeTimeEpochRange").innerText = `${startStr} → ${endStr}`;
 
       if (timeSlicePlane) {
         const timeRatio = (maxTimestampFilter - minTimestamp) / totalSpan;
@@ -2793,7 +2805,7 @@
     function startChronoTour() {
       isChronoTouring = true;
       chronoPlayText.innerText = "Halt Tour";
-      btnChronoPlay.style.background = "linear-gradient(135deg, #ff4081, #f5c062)";
+      btnChronoPlay.style.background = "linear-gradient(135deg, #ff2d75, #ffd600)";
       chronoTourIndex = 0;
       timeSliderStart.value = minTimestamp;
       runChronoStep();
